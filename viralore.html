@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="VIRALORE - Explore dangerous viruses through scientific research and easy explanations.">
+<title>VIRALORE | Virus Research & Discovery</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080b18;--card:#11172b;--purple:#8b5cf6;--blue:#38bdf8;--white:#f4f6ff;--muted:#a3acc4}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--white);line-height:1.7}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:18px 7%;background:rgba(8,11,24,.94);backdrop-filter:blur(15px);border-bottom:1px solid #202941}
+.logo{font-size:25px;font-weight:900;letter-spacing:3px;background:linear-gradient(90deg,#38bdf8,#a78bfa);-webkit-background-clip:text;color:transparent}
+nav ul{display:flex;list-style:none;gap:25px}
+nav ul a{font-size:13px;color:var(--muted);transition:.3s}
+nav ul a:hover{color:var(--blue)}
+.menu-btn{display:none;background:none;color:white;border:none;font-size:27px;cursor:pointer}
+.hero{min-height:620px;display:flex;align-items:center;padding:90px 8%;background:radial-gradient(ellipse at 80% 40%,#39207855,transparent 45%),radial-gradient(ellipse at 10% 80%,#07598533,transparent 45%)}
+.hero-content{max-width:750px}
+.tag{display:inline-block;padding:7px 15px;border:1px solid #8b5cf655;color:#b9a2ff;border-radius:30px;font-size:12px;letter-spacing:2px;margin-bottom:25px}
+.hero h1{font-size:clamp(45px,8vw,85px);line-height:1.08;font-weight:900;letter-spacing:-3px}
+.gradient{background:linear-gradient(90deg,#38bdf8,#a78bfa);-webkit-background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:580px;margin:25px 0 30px;font-size:16px}
+.btn{display:inline-block;padding:13px 24px;border-radius:9px;background:linear-gradient(90deg,#6366f1,#9333ea);color:white;font-weight:700;font-size:14px;transition:.3s}
+.btn:hover{transform:translateY(-4px);box-shadow:0 10px 30px #8b5cf655}
+section{padding:85px 8%}
+.section-title{font-size:clamp(27px,5vw,40px);margin-bottom:12px}
+.section-sub{color:var(--muted);margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{background:linear-gradient(145deg,#141c34,#0e1426);border:1px solid #26314d;padding:28px;border-radius:17px;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:#8b5cf6}
+.card h3{font-size:19px;margin-bottom:13px;color:#c4b5fd}
+.card p,.card li{color:var(--muted);font-size:14px}
+.card ul{padding-left:20px}
+.number{font-size:32px;font-weight:900;color:var(--blue);margin-bottom:12px}
+.highlight{color:#67e8f9;font-weight:700}
+.warning{border-left:4px solid #f59e0b;background:#f59e0b12;padding:20px;margin-top:25px;border-radius:8px}
+.virus-art{width:100%;max-width:360px;margin:25px auto;display:block;animation:float 5s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+.timeline{border-left:2px solid #8b5cf6;padding-left:25px}
+.timeline div{margin-bottom:25px}
+.timeline h3{color:#a78bfa}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{background:#11172b;padding:22px;border-radius:13px;border:1px solid #26314d}
+.step span{font-size:30px;font-weight:900;color:var(--blue)}
+.step h3{margin:10px 0}
+.step p{color:var(--muted);font-size:13px}
+.faq{margin-top:15px;border:1px solid #26314d;border-radius:10px;overflow:hidden}
+.faq button{width:100%;text-align:left;padding:18px;background:#11172b;color:white;border:none;cursor:pointer;font-size:15px;font-weight:700}
+.faq p{display:none;padding:18px;color:var(--muted);background:#0d1325;font-size:14px}
+.faq.active p{display:block}
+.sources a{color:var(--blue);text-decoration:underline}
+footer{background:#050711;padding:45px 8%;text-align:center;border-top:1px solid #26314d}
+footer p{color:var(--muted);font-size:13px;margin-top:10px}
+@media(max-width:750px){nav ul{display:none;position:absolute;top:65px;left:0;width:100%;background:#0b1020;flex-direction:column;padding:25px}nav ul.show{display:flex}.menu-btn{display:block}.grid,.steps{grid-template-columns:1fr}section{padding:65px 6%}.hero{padding:80px 6%;min-height:550px}}
+</style>
+</head>
+<body>
+<nav>
+<a href="#" class="logo">VIRALORE.</a>
+<button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation">☰</button>
+<ul id="navLinks">
+<li><a href="#home">Home</a></li><li><a href="#origin">Origin</a></li><li><a href="#effects">Human Effects</a></li><li><a href="#deaths">Statistics</a></li><li><a href="#prevention">Prevention</a></li><li><a href="#medication">Medication</a></li>
+</ul>
+</nav>
+<header class="hero" id="home"><div class="hero-content">
+<span class="tag">VIRUS RESEARCH PROJECT / 001</span>
+<h1>DECODE THE<br><span class="gradient">UNKNOWN.</span></h1>
+<p>Welcome to VIRALORE — a scientific exploration of some of the world's most dangerous viruses. Discover their origins, understand their effects on human life, and explore the science behind prevention and protection.</p>
+<a href="#rabies" class="btn">EXPLORE FIRST DECODE →</a>
+<p style="font-size:12px;margin-top:25px">INDEPENDENT EDUCATIONAL RESEARCH</p>
+</div></header>
+<section id="rabies">
+<span class="tag">FIRST VIRUS DECODE</span><h2 class="section-title">RABIES <span class="gradient">VIRUS</span></h2>
+<p class="section-sub">Understanding one of the most lethal viral diseases known to science.</p>
+<div class="grid">
+<div class="card"><div class="number">01 / OVERVIEW</div><h3>What is Rabies?</h3>
+<p>Rabies is a viral zoonotic disease that affects the central nervous system of mammals, including humans. It is usually transmitted through the saliva of infected animals, especially through bites and scratches.</p><br>
+<p>Once clinical symptoms appear, rabies is virtually 100% fatal. However, prompt preventive medical treatment after exposure can prevent the disease.</p></div>
+<div class="card"><h3>Scientific Identity</h3><ul><li>Virus: Rabies virus</li><li>Family: Rhabdoviridae</li><li>Genus: Lyssavirus</li><li>Type: RNA virus</li><li>Shape: Bullet-shaped</li><li>Main target: Nervous system</li><li>Transmission: Infected animal saliva</li></ul></div>
+</div>
+<svg class="virus-art" viewBox="0 0 350 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylized rabies virus illustration">
+<defs><radialGradient id="virusGradient"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#312e81"/></radialGradient></defs>
+<g stroke="#38bdf8" stroke-width="4"><path d="M175 45V15 M175 255V285 M75 150H35 M275 150H315 M105 80L75 50 M245 80L275 50 M105 220L75 250 M245 220L275 250"/></g>
+<path d="M90 150 C90 95 130 65 205 85 C260 100 280 140 260 185 C240 235 180 240 125 210 C95 195 90 175 90 150Z" fill="url(#virusGradient)" stroke="#c4b5fd" stroke-width="4"/>
+<path d="M120 130Q175 80 230 135 Q260 180 195 200Q135 220 115 170" fill="none" stroke="#67e8f9" stroke-width="5"/>
+<circle cx="145" cy="125" r="7" fill="white"/><circle cx="205" cy="155" r="7" fill="white"/><circle cx="165" cy="190" r="6" fill="white"/>
+<text x="175" y="275" fill="#a78bfa" text-anchor="middle" font-size="12">RABIES VIRUS - ILLUSTRATION</text>
+</svg>
+</section>
+<section id="origin"><span class="tag">CHAPTER 01</span><h2 class="section-title">The Origin of <span class="gradient">Rabies</span></h2><p class="section-sub">A disease known to humanity for thousands of years.</p>
+<div class="card"><h3>Where did it originate?</h3><p>The exact geographical origin of rabies is unknown. Historical records show that the disease has been recognized by human civilizations for more than 4,000 years.</p><br><p>Rabies is a zoonotic disease, meaning it can spread between animals and humans. It exists across most regions of the world, with a particularly serious impact in parts of Asia and Africa.</p></div><br>
+<div class="timeline"><div><h3>Ancient history</h3><p>Historical records describe rabies-like diseases thousands of years ago.</p></div><div><h3>1885 — Major scientific breakthrough</h3><p>Louis Pasteur and his colleagues developed a successful rabies vaccine.</p></div><div><h3>Modern era</h3><p>Vaccination, improved surveillance and post-exposure treatment have made rabies preventable in humans.</p></div></div>
+</section>
+<section id="effects"><span class="tag">CHAPTER 02</span><h2 class="section-title">How Does It Affect <span class="gradient">Humans?</span></h2><p class="section-sub">Understanding how rabies enters the body and affects the nervous system.</p>
+<div class="grid">
+<div class="card"><h3>01. Transmission</h3><p>The virus usually enters the human body through the bite or scratch of an infected mammal. Infected saliva can also enter through broken skin or the eyes and mouth.</p></div>
+<div class="card"><h3>02. Nervous System</h3><p>The virus can travel through peripheral nerves towards the brain and spinal cord, where it causes severe inflammation.</p></div>
+<div class="card"><h3>03. Early Symptoms</h3><p>Early symptoms may include fever, headache, weakness and unusual pain or tingling around the exposure site.</p></div>
+<div class="card"><h3>04. Advanced Disease</h3><p>Advanced rabies can cause neurological problems, difficulty swallowing, abnormal behaviour and paralysis.</p></div>
+</div>
+<div class="warning"><strong>IMPORTANT MEDICAL FACT:</strong> Rabies is a medical emergency after a possible exposure. Never wait for symptoms before seeking medical attention.</div>
+</section>
+<section id="deaths"><span class="tag">CHAPTER 03</span><h2 class="section-title">The Human <span class="gradient">Death Toll</span></h2><p class="section-sub">The worldwide impact of rabies.</p>
+<div class="grid">
+<div class="card"><div class="number">~59,000</div><h3>Estimated annual deaths</h3><p>The commonly cited WHO global estimate is approximately 59,000 human deaths annually. Actual estimates vary according to the methodology and year.</p></div>
+<div class="card"><div class="number">99%</div><h3>Dog-mediated transmission</h3><p>Approximately 99% of human rabies cases are linked to infected dogs.</p></div>
+<div class="card"><div class="number">40%</div><h3>Children affected</h3><p>Children under 15 account for approximately 40% of human rabies cases.</p></div>
+<div class="card"><div class="number">~100%</div><h3>Fatality after symptoms</h3><p>Once clinical symptoms develop, rabies is virtually always fatal.</p></div>
+</div><p style="color:#7f8aa5;font-size:12px;margin-top:20px">Statistics are approximate global estimates, not a year-by-year historical death record.</p>
+</section>
+<section id="cure"><span class="tag">CHAPTER 04</span><h2 class="section-title">Is There a <span class="gradient">Cure?</span></h2>
+<div class="card"><h3>The scientific reality</h3><p>There is currently no reliably effective cure for rabies once clinical symptoms begin. Treatment at that stage is mainly supportive and focused on patient care.</p><br><p>However, rabies is preventable. Prompt post-exposure prophylaxis (PEP), provided before symptoms develop, can prevent the infection from progressing to disease.</p></div>
+<div class="warning">Prevention before symptoms develop is the key. Do not delay medical assessment after an animal bite or possible exposure.</div>
+</section>
+<section id="prevention"><span class="tag">CHAPTER 05</span><h2 class="section-title">Awareness & <span class="gradient">Prevention</span></h2><p class="section-sub">What should a person do after a possible rabies exposure?</p>
+<div class="steps">
+<div class="step"><span>01</span><h3>Wash immediately</h3><p>Wash the affected area thoroughly with soap and running water for at least 15 minutes.</p></div>
+<div class="step"><span>02</span><h3>Seek medical care</h3><p>Go to a hospital or medical facility urgently. Do not wait for symptoms.</p></div>
+<div class="step"><span>03</span><h3>Follow treatment</h3><p>Follow the medical professional's advice about vaccination and other required preventive treatment.</p></div>
+</div><br>
+<div class="card"><h3>How can we prevent rabies?</h3><ul><li>Vaccinate dogs and cats.</li><li>Avoid approaching unfamiliar animals.</li><li>Teach children safe behaviour around animals.</li><li>Report suspected rabid animals to the relevant authorities.</li><li>Seek medical attention after possible exposure.</li></ul></div>
+</section>
+<section id="medication"><span class="tag">CHAPTER 06</span><h2 class="section-title">Available <span class="gradient">Medication</span></h2><p class="section-sub">Modern medical science has developed effective ways to prevent rabies.</p>
+<div class="grid">
+<div class="card"><h3>Rabies Vaccine</h3><p>The human rabies vaccine helps the immune system develop protection against the virus. It is used before or after a potential exposure, according to medical advice.</p></div>
+<div class="card"><h3>Rabies Immunoglobulin (RIG)</h3><p>Rabies immunoglobulin provides ready-made antibodies and may be recommended for certain serious exposures in people who have not previously been vaccinated.</p></div>
+<div class="card"><h3>Monoclonal Antibodies</h3><p>Certain approved monoclonal antibody products can be used as an alternative to rabies immunoglobulin in some medical protocols.</p></div>
+<div class="card"><h3>Pre-exposure Vaccination</h3><p>Vaccination before exposure may be recommended for certain people at increased risk of encountering the virus.</p></div>
+</div>
+<div class="warning">These treatments are preventive medical interventions, not a home remedy or a cure for symptomatic rabies. A qualified healthcare professional must determine the appropriate treatment.</div>
+</section>
+<section><span class="tag">KNOWLEDGE CENTER</span><h2 class="section-title">Frequently Asked <span class="gradient">Questions</span></h2>
+<div class="faq"><button onclick="faq(this)">Can rabies be prevented? +</button><p>Yes. Timely post-exposure treatment and animal vaccination can prevent human rabies.</p></div>
+<div class="faq"><button onclick="faq(this)">Can a healthy-looking dog carry rabies? +</button><p>An animal's appearance alone cannot reliably establish whether it is infected. Follow medical and veterinary advice after a possible exposure.</p></div>
+<div class="faq"><button onclick="faq(this)">Is rabies contagious between humans? +</button><p>Ordinary person-to-person transmission has not been confirmed. Human-to-human transmission through organ or tissue transplantation has been documented in rare cases.</p></div>
+<div class="faq"><button onclick="faq(this)">What is the most important thing to remember? +</button><p>Never wait for symptoms after a possible rabies exposure. Wash the wound and seek urgent medical care.</p></div>
+</section>
+<section class="sources"><span class="tag">RESEARCH REFERENCES</span><h2 class="section-title">Scientific <span class="gradient">Sources</span></h2><p class="section-sub">Reliable sources used for this educational research.</p>
+<div class="card">
+<p>01. World Health Organization (WHO)<br><a href="https://www.who.int/news-room/fact-sheets/detail/rabies" target="_blank" rel="noopener">WHO - Rabies Fact Sheet</a></p><br>
+<p>02. Centers for Disease Control and Prevention<br><a href="https://www.cdc.gov/rabies/" target="_blank" rel="noopener">CDC - Rabies Information</a></p><br>
+<p>03. Sri Lanka Epidemiology Unit<br><a href="https://www.epid.gov.lk/" target="_blank" rel="noopener">Official Epidemiology Unit</a></p>
+</div></section>
+<section><span class="tag">ABOUT THE RESEARCHER</span><h2 class="section-title">The Mind Behind <span class="gradient">VIRALORE</span></h2>
+<div class="card"><h3>Independent Student Research</h3><p>Researcher: Shant Kumar Shamid Jiroshan</p><p>Advanced Level Student</p><p>Highlands College, Hatton</p><br><p>Driven by curiosity about viruses that affect human life, this project aims to explore scientific discoveries and present complex biological information in a simple, understandable way.</p><br><p class="highlight">"Understand the virus. Discover the science. Spread awareness."</p></div>
+</section>
+<footer><div class="logo">VIRALORE.</div><p>DECODING THE UNKNOWN. UNDERSTANDING THE SCIENCE.</p><p>Independent educational research project.</p><p>© 2026 VIRALORE. All rights reserved.</p><p>Medical information is educational and does not replace professional medical advice.</p></footer>
+<script>
+function toggleMenu(){document.getElementById("navLinks").classList.toggle("show")}
+function faq(button){button.parentElement.classList.toggle("active")}
+document.querySelectorAll("#navLinks a").forEach(link=>{link.addEventListener("click",()=>{document.getElementById("navLinks").classList.remove("show")})})
+</script>
+</body>
+</html>
